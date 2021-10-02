@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1em 0;
+  background-color: #fff;
+}
+
+.company {
+  display: flex;
+  gap: 5em;
+  flex-grow: 1;
+  align-items: center;
+  flex-direction: row;
+}
+
+.searchInput {
+  width: 35em;
+}
