@@ -16,7 +16,11 @@
 }
 
 .active {
-  background-color: black;
+  background-color: $shade-gray-2;
+  &:hover {
+
+    background-color: $shade-gray-2;
+  }
 }
 
 .companyLogo {
@@ -32,4 +36,9 @@
 .role {
   font-size: ms(2);
   font-weight: 500;
+}
+
+.checkMark {
+  opacity: 0.7;
+  color: $color-primary--dark;
 }

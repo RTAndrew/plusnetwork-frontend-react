@@ -9,7 +9,6 @@ export const firstLetterUpperCase = (value: string) =>
  */
 export const kNumberFormatter = (num: string | number) => {
   const cast = Number(num);
-  console.log(cast);
   if (isNaN(cast)) return '$$$';
 
   let result = 0;

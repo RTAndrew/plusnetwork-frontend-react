@@ -5,6 +5,12 @@ import JobsStore from './jobs';
 class SearchS {
   @observable private searchQuery = '';
   @observable private jobs = JobsStore.getJobs;
+  @observable private activeJobId = '';
+
+  @computed
+  get getActiveJobId() {
+    return this.activeJobId;
+  }
 
   @computed
   get getSearchResults() {
@@ -24,6 +30,10 @@ class SearchS {
 
   @action setSearchQuery(query: string) {
     this.searchQuery = query;
+  }
+
+  @action setActiveJobId(id: string) {
+    this.activeJobId = id;
   }
 
   getJobById(id: string) {
