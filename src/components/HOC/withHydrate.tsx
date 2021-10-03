@@ -15,7 +15,7 @@ const withHydrate = (C: FC) => {
 
     const fetchJobs = useCallback(async () => {
       try {
-        const result = await Promise.resolve<IJob[]>(Jobs);
+        const result = await Promise.resolve(Jobs as unknown as IJob[]);
         JobsStore.setJobs(result);
       } catch (error) {
         console.log(error);
