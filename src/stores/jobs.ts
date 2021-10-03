@@ -1,7 +1,7 @@
 import { action, computed, observable } from 'mobx';
 import { IJob } from 'types';
 
-class JobsStore {
+class JobS {
   @observable private jobs: IJob[] | null = null;
 
   @computed
@@ -17,5 +17,7 @@ class JobsStore {
     return this.jobs?.filter((j) => j.id === id)[0];
   }
 }
+
+const JobsStore = new JobS();
 
 export default JobsStore;
