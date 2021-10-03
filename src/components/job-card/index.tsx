@@ -1,4 +1,4 @@
-import { CheckCircleFilled } from '@ant-design/icons';
+import { GlobalOutlined } from '@ant-design/icons';
 import { Space, Tooltip, Typography } from 'antd';
 import clsx from 'clsx';
 import { ElipseDivider } from 'components';
@@ -42,7 +42,7 @@ const JobCard = ({ job }: JobCardProps) => {
             </Typography.Paragraph>
             {presence === 'remote' && (
               <Tooltip placement="top" title="Fully remote">
-                <CheckCircleFilled className={styles.checkMark} />
+                <GlobalOutlined className={styles.checkMark} />
               </Tooltip>
             )}
           </Space>
