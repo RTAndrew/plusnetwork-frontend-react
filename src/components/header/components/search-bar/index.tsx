@@ -1,8 +1,11 @@
 import { useDebounce } from 'ahooks';
 import { Input } from 'antd';
+import clsx from 'clsx';
 import { useStore } from 'hooks';
 import { observer } from 'mobx-react';
 import { HTMLAttributes, useEffect, useState } from 'react';
+
+import styles from './search-bar.module.scss';
 
 const { Search } = Input;
 
@@ -20,7 +23,7 @@ const SearchBar = ({ className }: HTMLAttributes<HTMLElement>) => {
       <Search
         enterButton
         size="large"
-        className={className}
+        className={clsx(className, styles.input)}
         placeholder="search for roles or companies"
         onChange={(e) => setValue(e.target.value)}
       />
