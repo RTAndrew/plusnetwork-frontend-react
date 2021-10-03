@@ -1,4 +1,5 @@
-import { Space, Typography } from 'antd';
+import { GlobalOutlined } from '@ant-design/icons';
+import { Space, Tooltip, Typography } from 'antd';
 import clsx from 'clsx';
 import { ElipseDivider } from 'components';
 import { formatDistance } from 'date-fns';
@@ -15,15 +16,13 @@ const JobCard = ({ job }: JobCardProps) => {
   let history = useHistory();
   const { SearchStore } = useStore();
 
-  const { company, role, createdAt, location, id } = job;
+  const { company, role, createdAt, location, id, presence } = job;
   const isActive = SearchStore.getActiveJobId === id;
 
   const onClick = () => {
     SearchStore.setActiveJobId(id);
     history.push(`${Routes.Jobs}/${id}`);
   };
-
-  console.log(isActive);
 
   return (
     <div onClick={onClick} className={clsx(styles.root, isActive && styles.active)}>
@@ -37,9 +36,16 @@ const JobCard = ({ job }: JobCardProps) => {
           <Typography.Paragraph> {location} </Typography.Paragraph>
         </Space>
         <div className={styles.footer}>
-          <Typography.Paragraph type="secondary">
-            {formatDistance(new Date(createdAt.split('T')[0]), new Date(), { addSuffix: true })}
-          </Typography.Paragraph>
+          <Space size="middle">
+            <Typography.Paragraph type="secondary">
+              {formatDistance(new Date(createdAt.split('T')[0]), new Date(), { addSuffix: true })}
+            </Typography.Paragraph>
+            {presence === 'remote' && (
+              <Tooltip placement="top" title="Fully remote">
+                <GlobalOutlined className={styles.checkMark} />
+              </Tooltip>
+            )}
+          </Space>
         </div>
       </div>
     </div>
