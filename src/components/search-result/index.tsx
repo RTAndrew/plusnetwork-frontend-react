@@ -5,19 +5,19 @@ import { observer } from 'mobx-react';
 
 import styles from './styles.module.scss';
 
-const SearchResult = observer(() => {
-  const { JobsStore } = useStore();
+const SearchResult = () => {
+  const { SearchStore } = useStore();
 
   return (
     <Container className={styles.root}>
       <Typography.Title level={5} type="secondary">
-        {JobsStore.getJobs?.length}
+        {SearchStore.getSearchResults?.length}
       </Typography.Title>
       <Button type="default" size="large">
         Filter
       </Button>
     </Container>
   );
-});
+};
 
-export default SearchResult;
+export default observer(SearchResult);

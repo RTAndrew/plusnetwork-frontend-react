@@ -1,11 +1,10 @@
-import { Avatar, Input, Typography } from 'antd';
+import { Avatar, Typography } from 'antd';
 import { Container } from 'components';
 import { config } from 'config';
 
 import { profileImage } from '../../constants';
+import SearchBar from './components/search-bar';
 import styles from './header.module.scss';
-
-const { Search } = Input;
 
 const Header = () => {
   return (
@@ -15,12 +14,7 @@ const Header = () => {
           <Typography.Title level={4} style={{ marginBottom: 0 }}>
             {config.CompanyName}
           </Typography.Title>
-          <Search
-            enterButton
-            size="large"
-            placeholder="search for roles or companies"
-            className={styles.searchInput}
-          />
+          <SearchBar className={styles.searchInput} />
         </div>
         <div className={styles.user}>
           <Avatar shape="circle" src={profileImage} />
