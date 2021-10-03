@@ -16,7 +16,11 @@
 }
 
 .active {
-  background-color: black;
+  background-color: $shade-gray-2;
+  &:hover {
+
+    background-color: $shade-gray-2;
+  }
 }
 
 .companyLogo {
