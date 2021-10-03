@@ -1,0 +1,11 @@
+@import 'scss/all';
+
+.root {
+  display: flex;
+  flex-flow: row;
+
+  overflow: hidden;
+  height: calc(100vh - 130px);
+  border-left: 1px solid $shade-gray-2;
+  border-right: 1px solid $shade-gray-2;
+}

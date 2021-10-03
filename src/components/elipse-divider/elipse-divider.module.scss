@@ -1,0 +1,9 @@
+@import 'scss/all';
+
+.root {
+  width: 5px;
+  height: 5px;
+  margin: 0 5px;
+  border-radius: 100%;
+  background-color: $shade-gray-3;
+}

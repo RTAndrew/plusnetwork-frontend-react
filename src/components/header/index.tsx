@@ -9,22 +9,24 @@ const { Search } = Input;
 
 const Header = () => {
   return (
-    <Container className={styles.root}>
-      <div className={styles.company}>
-        <Typography.Title level={4} style={{ marginBottom: 0 }}>
-          {config.CompanyName}
-        </Typography.Title>
-        <Search
-          enterButton
-          size="large"
-          placeholder="input search text"
-          className={styles.searchInput}
-        />
-      </div>
-      <div className={styles.user}>
-        <Avatar shape="circle" src={profileImage} />
-      </div>
-    </Container>
+    <div className={styles.root}>
+      <Container className={styles.container}>
+        <div className={styles.company}>
+          <Typography.Title level={4} style={{ marginBottom: 0 }}>
+            {config.CompanyName}
+          </Typography.Title>
+          <Search
+            enterButton
+            size="large"
+            placeholder="search for roles or companies"
+            className={styles.searchInput}
+          />
+        </div>
+        <div className={styles.user}>
+          <Avatar shape="circle" src={profileImage} />
+        </div>
+      </Container>
+    </div>
   );
 };
 
