@@ -5,7 +5,7 @@ import {
   HeartOutlined,
   ShareAltOutlined,
 } from '@ant-design/icons';
-import { Button, Space, Typography } from 'antd';
+import { Button, Space, Tag, Typography } from 'antd';
 import { ElipseDivider } from 'components';
 import { formatDistance } from 'date-fns';
 import { useStore } from 'hooks';
@@ -38,7 +38,7 @@ const JobDescription = () => {
 
   if (!job) return <> Sorry, we could not find the job you are looking for </>;
 
-  const { company, role, createdAt } = job;
+  const { company, role, createdAt, skills } = job;
 
   return (
     <div className={styles.root}>
@@ -70,6 +70,12 @@ const JobDescription = () => {
               </Typography.Paragraph>
             </div>
           ))}
+      </Space>
+
+      <Space className={styles.skills}>
+        {skills.map((v) => (
+          <Tag>{firstLetterUpperCase(v)}</Tag>
+        ))}
       </Space>
 
       <Space className={styles.applySection} size="large">

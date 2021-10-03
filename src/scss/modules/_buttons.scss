@@ -1,0 +1,38 @@
+@import './variables';
+
+button {
+  border-radius: 5px !important;
+}
+
+.ant-btn-primary {
+  display: flex;
+  align-items: center;
+
+  padding: 22px 44px;
+  font-weight: 500;
+  border-color: $color-primary;
+  background: $color-primary !important;
+
+  &:hover {
+    border-color: $color-primary--light !important;
+    background-color: $color-primary--light !important;
+  }
+
+  &:focus {
+    border-color: $color-primary--dark !important;
+    background-color: $color-primary--dark !important;
+  }
+}
+
+.ant-btn-link {
+  color: $color-primary;
+
+  &:hover,
+  &:focus {
+    color: $color-primary;
+  }
+
+  &:active {
+    color: $color-primary;
+  }
+}

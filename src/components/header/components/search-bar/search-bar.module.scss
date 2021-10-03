@@ -1,0 +1,33 @@
+@import 'scss/all';
+
+.input {
+  input {
+    &:hover {
+      border-color: $shade-gray-3 !important;
+    }
+    &:focus {
+      border-color: $shade-gray-3 !important;
+    }
+  }
+
+
+  button {
+    padding: $spacing-01 $spacing-03;
+
+    background: none !important;
+    color: $color-black !important;
+    border-top-left-radius: 0 !important;
+    border-color: $color-black !important;
+    border-bottom-left-radius: 0 !important;
+
+    &:hover {
+      border-color: $shade-gray-3 !important;
+      background: $shade-gray-2 !important;
+    }
+
+    &:focus {
+      border-color: $shade-gray-3 !important;
+      background: $shade-gray-2 !important;
+    }
+  }
+}

@@ -54,8 +54,8 @@
 .applySection {
   display: flex;
 
-  margin: $spacing-04 0;
   padding: $spacing-02 0;
+  margin-bottom: $layout-01;
   border-top: 1px solid $shade-gray-2;
   border-bottom: 1px solid $shade-gray-2;
 
@@ -63,4 +63,9 @@
     width: 24px !important;
     height: 24px !important;
   }
+}
+
+.skills {
+  flex-wrap: wrap;
+  margin: $layout-01 0 $spacing-02;
 }
