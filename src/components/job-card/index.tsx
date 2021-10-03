@@ -1,24 +1,39 @@
 import { Space, Typography } from 'antd';
+import clsx from 'clsx';
 import { ElipseDivider } from 'components';
+import { formatDistance } from 'date-fns';
+import { useHistory, useParams } from 'react-router';
+import { firstLetterUpperCase } from 'utils';
 
+import { Routes } from '../../constants';
 import styles from './job-card.module.scss';
+import { JobCardProps } from './job-card.types';
 
-const JobCard = () => {
+const JobCard = ({ job }: JobCardProps) => {
+  let history = useHistory();
+  const { id: jobId } = useParams<{ id: string }>();
+
+  const { company, role, createdAt, location, id } = job;
+  const isActive = jobId === id;
+
   return (
-    <div className={styles.root}>
-      <img
-        className={styles.companyLogo}
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/2339px-McDonald%27s_Golden_Arches.svg.png"
-        alt=""
-      />
+    <div
+      onClick={() => history.push(`${Routes.Jobs}/${id}`)}
+      className={clsx(styles.root, isActive && styles.active)}
+    >
+      <img className={styles.companyLogo} src={`${company.picture}${company.name}`} alt="" />
       <div className={styles.details}>
-        <Typography.Title level={5}> Frontend Role (Remote) </Typography.Title>
+        <Typography.Paragraph className={styles.role}>{role}</Typography.Paragraph>
         <Space split={<ElipseDivider />}>
-          <Typography.Paragraph> Dell </Typography.Paragraph>
-          <Typography.Paragraph> Senegal, Dakar </Typography.Paragraph>
+          <Typography.Paragraph>
+            {firstLetterUpperCase(company.name.split('.')[0])}
+          </Typography.Paragraph>
+          <Typography.Paragraph> {location} </Typography.Paragraph>
         </Space>
         <div className={styles.footer}>
-          <Typography.Paragraph type="secondary"> 2hr ago </Typography.Paragraph>
+          <Typography.Paragraph type="secondary">
+            {formatDistance(new Date(createdAt.split('T')[0]), new Date(), { addSuffix: true })}
+          </Typography.Paragraph>
         </div>
       </div>
     </div>

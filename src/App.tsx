@@ -1,17 +1,26 @@
 import { ConfigProvider } from 'antd';
 import en_US from 'antd/lib/locale/en_US';
-import { Header, JobSearch, SearchResult } from 'components';
+import { Header, JobSearch, withHydrate } from 'components';
+import { observer } from 'mobx-react';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-const App = () => {
+import { Routes } from './constants';
+
+const App = observer(() => {
+  const { path } = useRouteMatch();
+
   return (
     <>
       <ConfigProvider locale={en_US}>
         <Header />
-        <SearchResult />
-        <JobSearch />
+        <Switch>
+          <Route exact path={path} component={JobSearch} />
+          <Route path={Routes.Jobs} component={JobSearch} />
+          <Route path={Routes.Companies} component={JobSearch} />
+        </Switch>
       </ConfigProvider>
     </>
   );
-};
+});
 
-export default App;
+export default withHydrate(App);

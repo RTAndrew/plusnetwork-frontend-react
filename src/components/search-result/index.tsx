@@ -1,19 +1,23 @@
 import { Button, Typography } from 'antd';
 import { Container } from 'components';
+import { useStore } from 'hooks';
+import { observer } from 'mobx-react';
 
 import styles from './styles.module.scss';
 
-const SearchResult = () => {
+const SearchResult = observer(() => {
+  const { JobsStore } = useStore();
+
   return (
     <Container className={styles.root}>
       <Typography.Title level={5} type="secondary">
-        12 Results
+        {JobsStore.getJobs?.length}
       </Typography.Title>
       <Button type="default" size="large">
         Filter
       </Button>
     </Container>
   );
-};
+});
 
 export default SearchResult;
