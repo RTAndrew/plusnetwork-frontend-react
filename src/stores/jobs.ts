@@ -1,14 +1,20 @@
-import { action, observable } from 'mobx';
+import { action, computed, observable } from 'mobx';
+import { IJob } from 'types';
 
 class JobsStore {
-  @observable jwt_token: string = '';
+  @observable private jobs: IJob[] | null = null;
 
-  @action isUserAuthenticated() {
-    return !!this.jwt_token;
+  @computed
+  get getJobs() {
+    return this.jobs;
   }
 
-  @action setJwtToken(jwtToken: string) {
-    this.jwt_token = jwtToken;
+  @action setJobs(jobs: IJob[]) {
+    this.jobs = jobs;
+  }
+
+  getJobById(id: string) {
+    return this.jobs?.filter((j) => j.id === id)[0];
   }
 }
 
