@@ -1,5 +1,5 @@
 import { Divider, Space } from 'antd';
-import JobCard from 'components/job-card';
+import { JobCard } from 'components';
 import { useStore } from 'hooks';
 import { observer } from 'mobx-react';
 

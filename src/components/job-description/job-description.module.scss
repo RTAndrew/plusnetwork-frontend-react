@@ -4,26 +4,11 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-
-  max-width: 60%;
-  overflow-y: auto;
-  padding: $spacing-04;
-  border-left: 1px solid $shade-gray-2;
 }
 
 .header {
   display: flex;
   gap: $spacing-04;
-}
-
-.companyLogo {
-  width: 6em;
-  height: 6em;
-  border-radius: 100%;
-  background-size: auto;
-  box-sizing: border-box;
-  border: 1px solid $shade-gray-2;
-  filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.06));
 }
 
 .time {
