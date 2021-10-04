@@ -1,0 +1,18 @@
+@import 'scss/all';
+
+.brief {
+  display: flex;
+  gap: $spacing-02;
+  align-items: center;
+  color: $shade-gray-3 !important;
+
+  div.ant-typography,
+  .ant-typography p {
+    color: $shade-gray-3 !important;
+  }
+
+  svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}

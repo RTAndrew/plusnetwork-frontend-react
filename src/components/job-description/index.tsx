@@ -6,16 +6,16 @@ import {
   ShareAltOutlined,
 } from '@ant-design/icons';
 import { Button, Space, Tag, Typography } from 'antd';
-import { ElipseDivider, Picture } from 'components';
+import { Briefing, ElipseDivider, Picture } from 'components';
+import { IBriefing } from 'components/briefing/briefing.types';
 import { formatDistance } from 'date-fns';
 import { useStore } from 'hooks';
 import React, { useMemo } from 'react';
 import { useHistory, useParams } from 'react-router';
-import { firstLetterUpperCase, kNumberFormatter, uuid } from 'utils';
+import { firstLetterUpperCase, kNumberFormatter } from 'utils';
 
 import { Routes } from '../../constants';
 import styles from './job-description.module.scss';
-import { JobBriefing } from './job-description.types';
 
 const JobDescription = () => {
   const { id } = useParams<{ id: string }>();
@@ -31,7 +31,7 @@ const JobDescription = () => {
     history.push(`${Routes.Companies}/${company.name}`);
   };
 
-  const jobBriefings: JobBriefing[] = [
+  const jobBriefings: ReadonlyArray<IBriefing> = [
     {
       icon: <DollarOutlined />,
       label: `${kNumberFormatter(job?.salary.min!)} - ${kNumberFormatter(job?.salary.max!)} ${
@@ -67,18 +67,7 @@ const JobDescription = () => {
         </div>
       </div>
 
-      <Space className={styles.jobBriefingList} direction="vertical">
-        {jobBriefings
-          .filter((v) => v.label)
-          .map((v) => (
-            <div key={uuid()} className={styles.jobBriefing}>
-              {v.icon}
-              <Typography.Paragraph type="secondary" strong>
-                {v.label}
-              </Typography.Paragraph>
-            </div>
-          ))}
-      </Space>
+      <Briefing className={styles.jobBriefingList} brief={jobBriefings} />
 
       <Space className={styles.skills}>
         {skills.map((v) => (
