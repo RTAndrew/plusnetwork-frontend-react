@@ -6,14 +6,14 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { Divider, Space, Tabs, Typography } from 'antd';
-import { JobCard, Picture } from 'components';
+import { Briefing, JobCard, Picture } from 'components';
+import { IBriefing } from 'components/briefing/briefing.types';
 import { useStore } from 'hooks';
 import { observer } from 'mobx-react-lite';
 import { useParams } from 'react-router';
-import { firstLetterUpperCase, uuid } from 'utils';
+import { firstLetterUpperCase } from 'utils';
 
 import styles from './company-description.module.scss';
-import { CompanyBriefings } from './company-description.types';
 
 const { TabPane } = Tabs;
 
@@ -23,31 +23,26 @@ const CompanyDescription = () => {
 
   const company = CompaniesStore.getCompanyByName(id);
 
-  const companyBriefings: ReadonlyArray<CompanyBriefings> = [
+  const companyBriefings: ReadonlyArray<IBriefing> = [
     {
-      title: 'Employees',
       icon: <UserOutlined />,
       label: firstLetterUpperCase(company?.employees ?? ''),
     },
     {
-      title: 'Location',
       icon: <EnvironmentOutlined />,
       label: firstLetterUpperCase(company?.location ?? ''),
     },
     {
-      title: 'Industry',
       icon: <FolderOutlined />,
       label: firstLetterUpperCase(company?.industry ?? ''),
     },
     {
-      title: 'Industry',
       icon: <PhoneOutlined />,
-      label: company?.phone,
+      label: company?.phone ?? '',
     },
     {
-      title: 'Industry',
       icon: <MailOutlined />,
-      label: company?.email,
+      label: company?.email ?? '',
     },
   ];
 
@@ -66,18 +61,7 @@ const CompanyDescription = () => {
         </Space>
       </div>
 
-      <div className={styles.companyBriefings}>
-        <Space direction="vertical" style={{ margin: 0, flexWrap: 'wrap' }}>
-          {companyBriefings.map((c) => (
-            <div key={uuid()} className={styles.companyBriefingsItem}>
-              {c.icon}
-              <Typography.Paragraph type="secondary" strong>
-                {c.label}
-              </Typography.Paragraph>
-            </div>
-          ))}
-        </Space>
-      </div>
+      <Briefing className={styles.companyBriefings} brief={companyBriefings} />
 
       <Tabs defaultActiveKey="1" className={styles.tabOptions}>
         <TabPane tab="About" key="1">

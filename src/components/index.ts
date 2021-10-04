@@ -7,6 +7,7 @@ export { default as ElipseDivider } from './elipse-divider';
 export { default as JobDescription } from './job-description';
 export { default as CompanyDescription } from './company-description';
 export { default as Picture } from './picture';
+export { default as Briefing } from './briefing';
 
 // HOC
 export { default as withHydrate } from './HOC/withHydrate';
