@@ -1,7 +1,7 @@
 import { GlobalOutlined } from '@ant-design/icons';
 import { Space, Tooltip, Typography } from 'antd';
 import clsx from 'clsx';
-import { ElipseDivider } from 'components';
+import { ElipseDivider, Picture } from 'components';
 import { formatDistance } from 'date-fns';
 import { useStore } from 'hooks';
 import { observer } from 'mobx-react';
@@ -17,16 +17,18 @@ const JobCard = ({ job }: JobCardProps) => {
   const { SearchStore } = useStore();
 
   const { company, role, createdAt, location, id, presence } = job;
-  const isActive = SearchStore.getActiveJobId === id;
 
   const onClick = () => {
     SearchStore.setActiveJobId(id);
     history.push(`${Routes.Jobs}/${id}`);
   };
 
+  const isActive = SearchStore.getActiveJobId === id;
+
   return (
     <div onClick={onClick} className={clsx(styles.root, isActive && styles.active)}>
-      <img className={styles.companyLogo} src={`${company.picture}${company.name}`} alt="" />
+      <Picture src={`${company.picture}${company.name}`} />
+
       <div className={styles.details}>
         <Typography.Paragraph className={styles.role}>{role}</Typography.Paragraph>
         <Space split={<ElipseDivider />}>
