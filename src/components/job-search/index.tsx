@@ -1,4 +1,4 @@
-import { Container, Modal, SearchResult } from 'components';
+import { Container, Modal } from 'components';
 import { useStore } from 'hooks';
 import { observer } from 'mobx-react';
 
@@ -12,7 +12,6 @@ const JobSearch = () => {
 
   return (
     <>
-      <SearchResult />
       <Container className={styles.root}>
         <JobSearchLeftPanel /> <JobSearchRightPanel />
       </Container>

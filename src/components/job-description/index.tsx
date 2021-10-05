@@ -56,7 +56,7 @@ const JobDescription = () => {
             {role}
           </Typography.Title>
           <Space split={<ElipseDivider />} style={{ flexWrap: 'wrap' }}>
-            <Typography.Link onClick={onCompanyClick}>
+            <Typography.Link onClick={onCompanyClick} className={styles.companyName}>
               {firstLetterUpperCase(company.name.split('.')[0])}
             </Typography.Link>
             <div>{company.location}</div>

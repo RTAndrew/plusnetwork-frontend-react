@@ -11,6 +11,15 @@
   gap: $spacing-04;
 }
 
+.companyName {
+  color: $color-black !important;
+  text-decoration: underline !important;
+
+  &:hover {
+    color: $color-primary--dark !important;
+  }
+}
+
 .time {
   color: $color-primary--dark;
 }
