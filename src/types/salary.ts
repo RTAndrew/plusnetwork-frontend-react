@@ -1,5 +1,5 @@
 export interface ISalary {
-  min: string;
-  max: string;
+  min: number;
+  max: number;
   currency: string;
 }
