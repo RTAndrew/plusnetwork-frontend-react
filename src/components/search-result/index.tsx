@@ -13,7 +13,7 @@ const SearchResult = () => {
       <Typography.Title level={5} type="secondary">
         {SearchStore.getSearchResults?.length}
       </Typography.Title>
-      <Button type="default" size="large">
+      <Button type="default" size="large" onClick={() => SearchStore.setIsFilterOpen(true)}>
         Filter
       </Button>
     </Container>

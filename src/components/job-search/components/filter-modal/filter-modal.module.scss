@@ -1,0 +1,23 @@
+@import 'scss/all';
+
+.header {
+  margin-bottom: $spacing-05 !important;
+}
+
+.sectionHeader {
+  margin-bottom: $spacing-02 !important;
+  padding-bottom: $spacing-01 !important;
+  border-bottom: 1px solid $shade-gray-2;
+}
+
+.checkboxGroup {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: $spacing-03;
+}
+
+.footer {
+  display: flex;
+  gap: $spacing-03;
+  justify-content: flex-end;
+}
