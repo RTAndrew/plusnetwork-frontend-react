@@ -3,6 +3,20 @@
 .root {
   width: 40%;
   overflow-y: auto;
-  padding-top: $spacing-04;
   background-color: #fff;
+}
+
+.searchResult {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-03 $spacing-03;
+  border-bottom: 1px solid $shade-gray-2;
+}
+
+.filter {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

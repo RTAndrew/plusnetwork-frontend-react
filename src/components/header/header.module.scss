@@ -1,12 +1,16 @@
+@import 'scss/all';
+
+
 .root {
   padding: 1em 0;
   background-color: #fff;
+  border-bottom: 1px solid $shade-gray-2;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .company {

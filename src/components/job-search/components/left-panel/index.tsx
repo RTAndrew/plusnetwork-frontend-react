@@ -1,4 +1,5 @@
-import { Divider, Space } from 'antd';
+import { SettingOutlined } from '@ant-design/icons';
+import { Divider, Space, Typography } from 'antd';
 import { JobCard } from 'components';
 import { useStore } from 'hooks';
 import { observer } from 'mobx-react';
@@ -10,6 +11,23 @@ const JobSearchLeftPanel = observer(() => {
 
   return (
     <div className={styles.root}>
+      <div className={styles.searchResult}>
+        <Typography.Paragraph type="secondary" strong>
+          {SearchStore.getSearchResults?.length} results
+        </Typography.Paragraph>
+
+        <Space
+          size="small"
+          className={styles.filter}
+          onClick={() => SearchStore.setIsFilterOpen(true)}
+        >
+          <Typography.Paragraph type="secondary" strong>
+            Filter
+          </Typography.Paragraph>
+          <SettingOutlined />
+        </Space>
+      </div>
+
       <Space
         direction="vertical"
         style={{ width: '100%', gap: 0 }}
