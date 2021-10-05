@@ -1,6 +1,6 @@
 import { SettingOutlined } from '@ant-design/icons';
 import { Divider, Space, Typography } from 'antd';
-import { JobCard } from 'components';
+import { EmptyState, JobCard } from 'components';
 import { useStore } from 'hooks';
 import { observer } from 'mobx-react';
 
@@ -15,7 +15,6 @@ const JobSearchLeftPanel = observer(() => {
         <Typography.Paragraph type="secondary" strong>
           {SearchStore.getSearchResults?.length} results
         </Typography.Paragraph>
-
         <Space
           size="small"
           className={styles.filter}
@@ -28,15 +27,26 @@ const JobSearchLeftPanel = observer(() => {
         </Space>
       </div>
 
-      <Space
-        direction="vertical"
-        style={{ width: '100%', gap: 0 }}
-        split={<Divider style={{ margin: 0 }} />}
-      >
-        {SearchStore.getSearchResults?.map((v) => (
-          <JobCard key={v.id} job={v} />
+      {!SearchStore.getSearchResults ||
+        (SearchStore.getSearchResults.length < 1 && (
+          <EmptyState
+            className={styles.emptyState}
+            icon={<Typography.Title level={1}> 😞 </Typography.Title>}
+            label="No jobs found! Improve your search filter for better results"
+          />
         ))}
-      </Space>
+
+      {SearchStore.getSearchResults && SearchStore.getSearchResults?.length > 0 && (
+        <Space
+          direction="vertical"
+          style={{ width: '100%', gap: 0 }}
+          split={<Divider style={{ margin: 0 }} />}
+        >
+          {SearchStore.getSearchResults?.map((v) => (
+            <JobCard key={v.id} job={v} />
+          ))}
+        </Space>
+      )}
     </div>
   );
 });

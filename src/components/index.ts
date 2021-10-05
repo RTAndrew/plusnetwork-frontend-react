@@ -8,6 +8,7 @@ export { default as CompanyDescription } from './company-description';
 export { default as Picture } from './picture';
 export { default as Briefing } from './briefing';
 export { default as Modal } from './modal';
+export { default as EmptyState } from './empty-state';
 
 // HOC
 export { default as withHydrate } from './HOC/withHydrate';
