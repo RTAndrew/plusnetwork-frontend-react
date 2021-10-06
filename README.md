@@ -1,30 +1,57 @@
-# Coodesh Front-End Challenge 🏅 2021
+# Plus Network - To Infinity & Beyond
 
 ## Resume
-Pharma Inc. is a unicorn company that manages over 1 billion of public and private medical data, and, sooner or late, it expects to reach the moon. 🚀
+Imagine this scenario. We are in 2040, and on-site work is viewed with suspicion; everyone works from home, from the street, from the coffee shop, from another planet. The frontiers of remote work have become planetary, and we can work from Earth to a company on Mars and from Mars to a company on Earth.
 
-Access the link [here](https://rtandrew-coodesh-test.netlify.app/)
+Access the link [here](https://plusnetwork.netlify.app/) and the Figma design can be accessed [here](https://www.figma.com/file/mwZVHsPyWl3ttReEFtOvTd/Network?node-id=2%3A18)
 
 ## Technical Resume
-This project is part of the Coodesh technical assessment, where I was tasked to create a web app that interacts with the [Random User API](https://randomuser.me/documentation) and helps users find patient's medical information.
+This project is part of the Taikai Hackathon, that consisted in building a product where companies place job ads containing useful information for candidates such as:
 
-The project deadline was in 5 days, but I managed to do it in 3 days, covering all the test cases in the application.
+- Job title;
 
-For more information, please, have a look at the official [document.](https://lab.coodesh.com/insanityrodax/front-end-challenge-2021)
+- Short description;
+
+- Necessary skills (e.g., HTML, JavaScript, React, Node.js);
+
+- Company market (e.g., software house, healthcare, marketplaces);
+
+- Job type (e.g., full time, contract, internship);
+
+- Location;
+
+## The Problem
+
+The objective was to focus on the user experience whilst solving the common problems job seekers face such as abusive propaganda used by companies and navigating through thousands of jobs daily.
+
+Nowadays, there are plenty of platforms that aim to make job-seeking much easier. Some of these resemble the look of an analytical dashboard. And in my personal opinion, it works and doesn't work. Why? Because most of the job searches (even those taken carefully) are based on the quantity. And one of the main reasons that it does not work is that the market is fierce, and so it leads to different results or outcomes:
+- You may end up ghosted;
+- No feedback is provided;
+- You may have been rejected;
+- Or luckily, you may have passed (yay!).
+
+If you think about it, only one outcome out of the four is only interesting to you.
+
+However, as someone who has been in the same situation and used different platforms along the process, I decided to tackle the "quantity problem" and reduce the amount of time spent finding the optimal job while increasing the amount of interaction of job posts per minute. Just like LinkedIn allows you to, and, for me, it's one of the best (in terms of quantity).
+
+
 
 ## Project requirements
-- [x] Follow the proposed UI design
-- [x] Fetch user, add route pagination to allow link sharing
-- [x] Allow users to search the results based on `username` and `country`
-- [x] Allow sorting the results by `full name` and `gender`
-- [x] Implement `unit` and integration tests (currently the `test coverage is at 84.5%`)
+- [x] Implement a UI design
+- [x] Static list page where jobs are listing;
+- [x] Search field for search specific job title or company name;
+- [x] Filter by skills, markets, type, location, or any other information that you think is useful.
+- [x] Allow users to apply and save the jobs, and also review them later.
 
 
 ## Tech Stack
 - [x] React.js (CRA) + Typescript + [Ant Design](ant.design/)
+- [x] [Remeda (an alternative to Ramda and Lodash)](https://github.com/remeda/remeda)
+- [x] MobX for State Management
+- [x] React Router
 - [x] Git Workflow
-- [x] Jest + React Testing Library - For testing
 - [x] SASS modules
+- [x] Ali Hooks
 - [x] [Git Commit Message Convention](https://github.com/RTAndrew/git-commit-message-convention)
 - [x] ESlint + Prettier
 - [x] Commit lint + Lint Staged
@@ -33,11 +60,11 @@ For more information, please, have a look at the official [document.](https://la
 
 ## How To Run
 ```bash
-  git clone <repository> codechallenge-frontend-react
+  git clone <repository> plusnetwork-frontend-react
 ```
 
 ```bash
-  cd codechallenge-frontend-react
+  cd plusnetwork-frontend-react
 ```
 
 ```bash
@@ -47,10 +74,3 @@ For more information, please, have a look at the official [document.](https://la
 ```bash
   npm run dev
 ```
-For testing (before pushing, it will automatically run the tests):
-
-```bash
-  npm run test
-```
-
-There is no `env` to be set. However, and if you would like to, you can change some of the configurations in `/src/config`.

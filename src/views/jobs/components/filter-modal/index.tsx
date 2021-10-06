@@ -34,6 +34,7 @@ const FilterModal = () => {
     setJobLocation([]);
 
     SearchStore.resetAllFilterQueries();
+    SearchStore.setIsFilterOpen(false);
   };
 
   const onSave = () => {
@@ -42,6 +43,8 @@ const FilterModal = () => {
     SearchStore.setSalaryRange(salaryRange);
     SearchStore.setWorkingMode(workingMode);
     SearchStore.setJobLocation(jobLocation);
+
+    SearchStore.setIsFilterOpen(false);
   };
 
   return (
