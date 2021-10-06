@@ -1,6 +1,5 @@
 export { default as Header } from './header';
 export { default as Container } from './container';
-export { default as JobSearch } from './job-search';
 export { default as JobCard } from './job-card';
 export { default as ElipseDivider } from './elipse-divider';
 export { default as JobDescription } from './job-description';

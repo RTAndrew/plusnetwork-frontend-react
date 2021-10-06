@@ -1,20 +1,23 @@
-import { Container, Modal } from 'components';
+import { Modal } from 'components';
 import { useStore } from 'hooks';
+import { DesktopLayout } from 'layout';
 import { observer } from 'mobx-react';
 
 import FilterModal from './components/filter-modal';
 import JobSearchLeftPanel from './components/left-panel';
 import JobSearchRightPanel from './components/right-panel';
-import styles from './job-search.module.scss';
 
-const JobSearch = () => {
+const JobView = () => {
   const { SearchStore } = useStore();
 
   return (
     <>
-      <Container className={styles.root}>
-        <JobSearchLeftPanel /> <JobSearchRightPanel />
-      </Container>
+      <DesktopLayout
+        leftPanel={<JobSearchLeftPanel />}
+        leftPanelSize={40}
+        rightPanelSize={60}
+        rightPanel={<JobSearchRightPanel />}
+      />
 
       <Modal
         destroyOnClose
@@ -28,4 +31,4 @@ const JobSearch = () => {
   );
 };
 
-export default observer(JobSearch);
+export default observer(JobView);

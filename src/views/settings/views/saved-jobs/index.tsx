@@ -10,7 +10,7 @@ const SavedJobs = () => {
   if (!JobsStore.savedJobs || JobsStore.savedJobs.length < 1)
     return (
       <EmptyState
-        label="You have not saved any job, yet"
+        label="You have not saved any job, yet!"
         icon={<Typography.Title level={1}> 😞 </Typography.Title>}
       />
     );
