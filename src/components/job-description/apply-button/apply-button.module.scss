@@ -1,0 +1,10 @@
+@import 'scss/all';
+
+.alreadyApplied {
+  display: flex;
+  gap: $spacing-02;
+
+  svg {
+    color: $color-primary--dark;
+  }
+}
