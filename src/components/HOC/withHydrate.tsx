@@ -22,8 +22,6 @@ const withHydrate = (C: FC) => {
         setLoading(true);
 
         // fake a promise for loading purpose
-        // await new Promise((res) => setTimeout(res, 1000));
-
         const result = await Promise.resolve(Jobs as unknown as IJob[]);
         JobsStore.setJobs(result);
         await JobsStore.hydrateAppliedJobsFromLocalStorage();
@@ -41,8 +39,6 @@ const withHydrate = (C: FC) => {
 
     if (loading) return <Loading />;
     if (error) return <> Error </>;
-
-    // There is a delay unting the Store gets updated
     if (!loading && !error && !JobsStore.getJobs) return <Loading />;
 
     return <C />;
