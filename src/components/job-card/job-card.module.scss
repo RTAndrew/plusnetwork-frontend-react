@@ -16,9 +16,9 @@
 }
 
 .active {
-  background-color: $shade-gray-2;
-  &:hover {
+  background-color: $color-primary--lighter;
 
+  &:hover {
     background-color: $shade-gray-2;
   }
 }
