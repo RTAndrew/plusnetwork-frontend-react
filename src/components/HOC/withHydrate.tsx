@@ -21,6 +21,9 @@ const withHydrate = (C: FC) => {
       try {
         setLoading(true);
 
+        // fake a promise for loading purpose
+        await new Promise((res) => setTimeout(res, 500));
+
         const result = await Promise.resolve(Jobs as unknown as IJob[]);
         JobsStore.setJobs(result);
         await JobsStore.hydrateAppliedJobsFromLocalStorage();

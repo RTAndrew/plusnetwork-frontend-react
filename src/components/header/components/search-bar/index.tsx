@@ -26,6 +26,7 @@ const SearchBar = ({ className }: HTMLAttributes<HTMLElement>) => {
         className={clsx(className, styles.input)}
         placeholder="search for roles or companies"
         onChange={(e) => setValue(e.target.value)}
+        onSearch={(value) => setValue(value)}
       />
     </div>
   );
