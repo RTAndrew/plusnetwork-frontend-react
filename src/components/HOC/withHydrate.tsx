@@ -21,7 +21,6 @@ const withHydrate = (C: FC) => {
       try {
         setLoading(true);
 
-        // fake a promise for loading purpose
         const result = await Promise.resolve(Jobs as unknown as IJob[]);
         JobsStore.setJobs(result);
         await JobsStore.hydrateAppliedJobsFromLocalStorage();
@@ -37,9 +36,8 @@ const withHydrate = (C: FC) => {
       fetchJobs();
     }, [fetchJobs]);
 
-    if (loading) return <Loading />;
-    if (error) return <> Error </>;
-    if (!loading && !error && !JobsStore.getJobs) return <Loading />;
+    if (error) return <> Oops, we had an internal problem! Refresh the page, plz. </>;
+    if (loading || (!loading && !error && !JobsStore.getJobs)) return <Loading />;
 
     return <C />;
   };

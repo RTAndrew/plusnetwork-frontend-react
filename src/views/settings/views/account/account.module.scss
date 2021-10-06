@@ -1,0 +1,23 @@
+@import 'scss/all';
+
+.profileImage {
+  width: 11em;
+  height: 11em;
+  border-radius: 100%;
+}
+
+.userName {
+  margin-top: $spacing-03;
+}
+
+.userInformation {
+  display: flex;
+  gap: $spacing-01;
+  flex-direction: column;
+
+  margin-top: $layout-01;
+
+  :global(h5.ant-typography) {
+    font-size: 14px !important;
+  }
+}
