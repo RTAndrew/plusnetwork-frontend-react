@@ -15,11 +15,13 @@ import { useHistory, useParams } from 'react-router';
 import { firstLetterUpperCase, kNumberFormatter } from 'utils';
 
 import { Routes } from '../../constants';
+import ApplyButton from './apply-button';
 import styles from './job-description.module.scss';
 
 const JobDescription = () => {
   const { id } = useParams<{ id: string }>();
   const history = useHistory();
+
   const { JobsStore } = useStore();
 
   const job = useMemo(() => {
@@ -76,9 +78,8 @@ const JobDescription = () => {
       </Space>
 
       <Space className={styles.applySection} size="large">
-        <Button size="large" type="primary">
-          Apply
-        </Button>
+        <ApplyButton id={id} />
+
         <Button type="text" shape="circle" icon={<HeartOutlined />} />
         <Button type="text" shape="circle" icon={<ShareAltOutlined />} />
       </Space>

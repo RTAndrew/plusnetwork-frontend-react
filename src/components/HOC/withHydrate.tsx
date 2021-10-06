@@ -17,6 +17,7 @@ const withHydrate = (C: FC) => {
       try {
         const result = await Promise.resolve(Jobs as unknown as IJob[]);
         JobsStore.setJobs(result);
+        await JobsStore.hydrateAppliedJobsFromLocalStorage();
       } catch (error) {
         console.log(error);
       }
@@ -26,7 +27,7 @@ const withHydrate = (C: FC) => {
       fetchJobs();
     }, [fetchJobs]);
 
-    return JobsStore.getJobs ? <C /> : <> Anderson </>;
+    return JobsStore.getJobs ? <C /> : <> Error </>;
   };
 
   return observer(Component);
