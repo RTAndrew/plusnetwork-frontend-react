@@ -10,7 +10,7 @@ const JobSearchLeftPanel = observer(() => {
   const { SearchStore } = useStore();
 
   return (
-    <div className={styles.root}>
+    <>
       <div className={styles.searchResult}>
         <Typography.Paragraph type="secondary" strong>
           {SearchStore.getSearchResults?.length} results
@@ -47,7 +47,7 @@ const JobSearchLeftPanel = observer(() => {
           ))}
         </Space>
       )}
-    </div>
+    </>
   );
 });
 

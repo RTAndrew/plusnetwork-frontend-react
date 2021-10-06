@@ -1,0 +1,22 @@
+@import 'scss/all';
+
+.root {
+  display: flex;
+  flex-flow: row;
+
+  overflow: hidden;
+  height: calc(100vh - 74px);
+  border-left: 1px solid $shade-gray-2;
+  border-right: 1px solid $shade-gray-2;
+}
+
+.leftPanel {
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.rightPanel {
+  overflow-y: auto;
+  padding: $spacing-04;
+  border-left: 1px solid $shade-gray-2;
+}
