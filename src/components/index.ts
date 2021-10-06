@@ -9,6 +9,7 @@ export { default as Picture } from './picture';
 export { default as Briefing } from './briefing';
 export { default as Modal } from './modal';
 export { default as EmptyState } from './empty-state';
+export { default as Loading } from './loading';
 
 // HOC
 export { default as withHydrate } from './HOC/withHydrate';
