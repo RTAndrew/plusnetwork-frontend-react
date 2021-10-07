@@ -26,7 +26,10 @@ const withHydrate = (C: FC) => {
 
         const result = await Promise.resolve(Jobs as unknown as IJob[]);
         JobsStore.setJobs(result);
+
+        // Hydrate Application
         await JobsStore.hydrateAppliedJobsFromLocalStorage();
+        await JobsStore.hydrateSavedJobsFromLocalStorage();
       } catch (error) {
         console.log(error);
         setError(true);

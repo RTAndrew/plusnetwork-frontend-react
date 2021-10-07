@@ -2,10 +2,9 @@ import {
   DollarOutlined,
   EnvironmentOutlined,
   FolderOpenOutlined,
-  HeartOutlined,
   ShareAltOutlined,
 } from '@ant-design/icons';
-import { Button, Space, Tag, Typography } from 'antd';
+import { Space, Tag, Typography } from 'antd';
 import { Briefing, ElipseDivider, Picture } from 'components';
 import { IBriefing } from 'components/briefing/briefing.types';
 import { formatDistance } from 'date-fns';
@@ -17,6 +16,7 @@ import { firstLetterUpperCase, kNumberFormatter } from 'utils';
 import { Routes } from '../../constants';
 import ApplyButton from './apply-button';
 import styles from './job-description.module.scss';
+import SaveButton from './save-button';
 
 const JobDescription = () => {
   const { id } = useParams<{ id: string }>();
@@ -80,8 +80,9 @@ const JobDescription = () => {
       <Space className={styles.applySection} size="large">
         <ApplyButton id={id} />
 
-        <Button type="text" shape="circle" icon={<HeartOutlined />} />
-        <Button type="text" shape="circle" icon={<ShareAltOutlined />} />
+        <SaveButton id={id} />
+
+        <ShareAltOutlined />
       </Space>
 
       <Typography.Paragraph>

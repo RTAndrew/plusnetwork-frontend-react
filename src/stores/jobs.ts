@@ -36,6 +36,13 @@ class JobS {
     this.appliedJobs = jobs;
   }
 
+  @action async saveJob(job: string) {
+    if (this.savedJobs?.includes(job)) this.savedJobs = this.savedJobs.filter((s) => s !== job);
+    else this.savedJobs = [...(this.savedJobs ?? []), job];
+
+    await this.saveSavedJobsToLocalStorage();
+  }
+
   @action async applyToJob(job: string) {
     if (this.appliedJobs?.includes(job)) return;
 
@@ -54,14 +61,36 @@ class JobS {
     }
   }
 
-  /** Hydrate the storage the applied jobs
-   *  saved in from LocalStorage.
+  /**
+   * Persist the saved jobs into LocalStorage
    */
+  @action async saveSavedJobsToLocalStorage() {
+    try {
+      window.localStorage.setItem(LocalStorageKeys.SavedJobs, JSON.stringify(this.savedJobs));
+    } catch (error) {
+      throw new Error(error as string);
+    }
+  }
+
+  /** Hydrate the applied jobs saved in from LocalStorage */
   @action async hydrateAppliedJobsFromLocalStorage() {
     try {
       const result = window.localStorage.getItem(LocalStorageKeys.AppliedJobs);
       if (!result) return;
+
       this.appliedJobs = JSON.parse(result);
+    } catch (error) {
+      throw new Error(error as string);
+    }
+  }
+
+  /** Hydrate the saved jobs saved in from LocalStorage */
+  @action async hydrateSavedJobsFromLocalStorage() {
+    try {
+      const result = window.localStorage.getItem(LocalStorageKeys.SavedJobs);
+      if (!result) return;
+
+      this.savedJobs = JSON.parse(result);
     } catch (error) {
       throw new Error(error as string);
     }
