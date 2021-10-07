@@ -30,10 +30,17 @@ Nowadays, there are plenty of platforms that aim to make job-seeking much easier
 - You may have been rejected;
 - Or luckily, you may have passed (yay!).
 
-If you think about it, only one outcome out of the four is only interesting to you.
+If you think about it, only one outcome out of the four is only interesting to you and should not focus too much on it.
 
-However, as someone who has been in the same situation and used different platforms along the process, I decided to tackle the "quantity problem" and reduce the amount of time spent finding the optimal job while increasing the amount of interaction of job posts per minute. Just like LinkedIn allows you to, and, for me, it's one of the best (in terms of quantity).
+## The Solution
 
+However, as someone who has been in the same situation and used different platforms along the process, I decided to tackle the "quantity problem" and reduce the amount of time spent finding the optimal job while increasing the amount of interaction of job posts per minute.
+
+    To achieve success you must constantly teach your market. - Brian Sher
+
+In this case, I do think that the best product is not always the best. So, instead of building something totally new with a higher learning curve, I opted to build something similar in the market, so the user could focus on getting a job instead of how to use the platform.
+
+    The best product is not always the best. - Brian Sher
 
 
 ## Project requirements
