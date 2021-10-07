@@ -5,6 +5,7 @@ const Loading = () => {
   return (
     <h1
       style={{
+        fontSize: '78px',
         color: 'black',
         position: 'absolute',
         top: '50%',
