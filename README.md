@@ -40,13 +40,13 @@ However, as someone who has been in the same situation and used different platfo
 - [x] Implement a UI design
 - [x] Static list page where jobs are listing;
 - [x] Search field for search specific job title or company name;
-- [x] Filter by skills, markets, type, location, or any other information that you think is useful.
-- [x] Allow users to apply and save the jobs, and also review them later.
+- [x] Filter by salary range, industries, job types, location, and working mode;
+- [x] Allow users to apply and save the jobs, and also review them later (data persistence).
 
 
 ## Tech Stack
 - [x] React.js (CRA) + Typescript + [Ant Design](ant.design/)
-- [x] [Remeda (an alternative to Ramda and Lodash)](https://github.com/remeda/remeda)
+- [x] [Remeda (a TypeScript alternative to Ramda and Lodash)](https://github.com/remeda/remeda)
 - [x] MobX for State Management
 - [x] React Router
 - [x] Git Workflow
