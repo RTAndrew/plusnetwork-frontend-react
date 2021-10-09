@@ -55,6 +55,8 @@ In this case, I do think that the best product is not always the best. So, inste
 - [x] React.js (CRA) + Typescript + [Ant Design](ant.design/)
 - [x] [Remeda (a TypeScript alternative to Ramda and Lodash)](https://github.com/remeda/remeda)
 - [x] MobX for State Management
+- [x] Date FNS
+- [x] html-react-parser
 - [x] React Router
 - [x] Git Workflow
 - [x] SASS modules
