@@ -1,3 +1,4 @@
+import { useTitle } from 'ahooks';
 import { Loading } from 'components';
 import { useStore } from 'hooks';
 import { observer } from 'mobx-react';
@@ -13,6 +14,7 @@ import { IJob } from 'types';
 const withHydrate = (C: FC) => {
   const Component = () => {
     const { JobsStore } = useStore();
+    useTitle('Plus Network by Rtandrew Paul');
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);

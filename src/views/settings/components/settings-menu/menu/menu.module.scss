@@ -15,4 +15,8 @@
 .isActive {
   font-weight: 600;
   background-color: $color-primary--lighter;
+
+  &:hover {
+    background-color: $color-primary--lighter;
+  }
 }
