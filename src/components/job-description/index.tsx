@@ -15,6 +15,7 @@ import { firstLetterUpperCase, kNumberFormatter } from 'utils';
 
 import { Routes } from '../../constants';
 import ApplyButton from './apply-button';
+import JobBody from './body';
 import styles from './job-description.module.scss';
 import SaveButton from './save-button';
 
@@ -85,14 +86,7 @@ const JobDescription = () => {
         <ShareAltOutlined />
       </Space>
 
-      <Typography.Paragraph>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis veniam illum delectus
-        enim, culpa blanditiis eaque sunt incidunt earum nulla vel. Excepturi vero placeat rem
-        similique! Praesentium temporibus necessitatibus molestias? Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Corporis veniam illum delectus enim, culpa blanditiis eaque
-        sunt incidunt earum nulla vel. Excepturi vero placeat rem similique! Praesentium temporibus
-        necessitatibus molestias?
-      </Typography.Paragraph>
+      <JobBody />
     </div>
   );
 };
